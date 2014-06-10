@@ -20,6 +20,11 @@ Or install it yourself as:
 
 TODO: Write usage instructions here
 
+## Links
+
+- https://github.com/bbatsov/rubocop
+- https://github.com/nevir/rubocop-rspec
+
 ## Contributing
 
 1. Fork it ( http://github.com/<my-github-username>/rubocop-gmom/fork )
