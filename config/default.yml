@@ -1,0 +1,3 @@
+NoSpaceInsideBlockPipes:
+  Description: 'test'
+  Enabled: true
