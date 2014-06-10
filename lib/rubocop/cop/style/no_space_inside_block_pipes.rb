@@ -4,6 +4,11 @@ module RuboCop
       class NoSpaceInsideBlockPipes < Cop
         def on_block(node)
           _method, args, _body = *node
+
+          if args.children.empty?
+            return
+          end
+
           left_pipe, right_pipe = args.loc.begin, args.loc.end
           first_arg, end_arg = args.children.first.loc.expression, args.children.last.loc.expression
           source_buffer = node.loc.expression.source_buffer

@@ -3,6 +3,18 @@ require 'spec_helper'
 describe RuboCop::Cop::Style::NoSpaceInsideBlockPipes do
   subject(:cop) { RuboCop::Cop::Style::NoSpaceInsideBlockPipes.new }
 
+  context 'ブロック内に仮引数がない場合' do
+    it '違反は見つからない' do
+      inspect_source(cop, ['before_validation do',
+                           ' if resource',
+                           '   puts resource',
+                           ' end',
+                           'end'])
+      expect(cop.offenses.size).to eq(0)
+    end
+  end
+
+
   context '左の|の後ろに半角スペースがある場合' do
     context '{}' do
       it '違反が見つかる' do
